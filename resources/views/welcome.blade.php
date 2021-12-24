@@ -411,6 +411,7 @@
 <body>
     <img class="wel-img" src="{{ asset('a.jpg') }}">
     <a href="{{ route('login') }}"><button class="login-button">Login</button></a>
+    <a href="{{ route('register') }}"><button class="signup-button">signup</button></a>
 
 </body>
 

@@ -431,7 +431,7 @@
   .signup-button {
     top: 20px;
     position: fixed;
-    right: 75px;
+    right: 10%;
     background-color: #4FC3A1;
     color: #324960;
     border-radius: 10px;
