@@ -14,6 +14,7 @@ class CreateMatchPlayersTable extends Migration
     public function up()
     {
         Schema::create('match_players', function (Blueprint $table) {
+            $table->id();
             $table->bigInteger('player_id')->unsigned();
             $table->bigInteger('fmatch_id')->unsigned();
             $table->bigInteger('position_id')->unsigned();
