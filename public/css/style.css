@@ -823,6 +823,17 @@
   overflow: visible;
   padding: 10px;
 }
+.signup-button {
+  top: 20px;
+  position: fixed;
+  right: 10%;
+  background-color: #4FC3A1;
+  color: #324960;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  overflow: visible;
+}
 .login-form {
   width: 350px;
   height: min-content;
