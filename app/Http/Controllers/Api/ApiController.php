@@ -162,7 +162,7 @@ class ApiController extends Controller
      /**
      * 
      * @OA\Delete(
-     * path="/api/match/delte/{id}",
+     * path="/api/match/delete/{id}",
      * tags={"match"},
      * description="delete ",
      *     
@@ -192,7 +192,7 @@ class ApiController extends Controller
      /**
      * 
      * @OA\Post(
-     * path="/api/match/add-match-ditails/{id}",
+     * path="/api/match/addMatchDitails/{id}",
      * tags={"match"},
      * description="add new match details",
      *     

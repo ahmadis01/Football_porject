@@ -43,7 +43,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::put('/match/update/{id}', [MatchController::class, 'UpdateMatch']);
     Route::delete('/match/delete/{id}', [MatchController::class, 'DeleteMatch']);
     Route::get('/match/ditails/{id}', [MatchController::class, 'DitailsMatch']);
-    Route::post('match/add-match-ditails/{id}', [MatchController::class, 'AddDitailsMatch']);
+    Route::post('match/addMatchDitails/{id}', [MatchController::class, 'AddDitailsMatch']);
 
     //player routes
     Route::get('/player/all', [PlayerController::class, 'AllPlayers']);

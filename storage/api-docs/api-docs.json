@@ -246,7 +246,7 @@
                 ]
             }
         },
-        "/api/match/delte/{id}": {
+        "/api/match/delete/{id}": {
             "delete": {
                 "tags": [
                     "match"
@@ -295,7 +295,7 @@
                 ]
             }
         },
-        "/api/match/add-match-ditails/{id}": {
+        "/api/match/addMatchDitails/{id}": {
             "post": {
                 "tags": [
                     "match"

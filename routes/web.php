@@ -49,7 +49,7 @@ Route::post('/register', [RegisterController::class, 'register']);
     Route::post('/match/update/{id}', [MatchController::class, 'UpdateMatch'])->name('update.match');
     Route::get('/match/delete/{id}', [MatchController::class, 'DeleteMatch'])->name('delete.match');
     Route::get('/match/ditails/{id}', [MatchController::class, 'DitailsMatch'])->name('ditails.match');
-    Route::post('match/add-match-ditails/{id}', [MatchController::class, 'AddDitailsMatch']);
+    Route::post('match/addMatchDitails/{id}', [MatchController::class, 'AddDitailsMatch']);
 
 
     //player routes
