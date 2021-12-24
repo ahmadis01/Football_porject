@@ -749,6 +749,7 @@
     border-radius: 10px;
     font-size: 20px;
     font-weight: bold;
+    overflow: visible;
   }
 
   .home-table {
