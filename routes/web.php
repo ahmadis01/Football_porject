@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MatchController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\PositionController;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,7 @@ Route::get('/register/form', [RegisterController::class, 'showRegistrationForm']
 Route::post('/register', [RegisterController::class, 'register']);
 
 
-
+Route::group(['middleware' => 'auth:api'], function () {
     
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/user/edit/{id}', [HomeController::class, 'EditUser'])->name('edit.user');
@@ -66,3 +67,4 @@ Route::post('/register', [RegisterController::class, 'register']);
     Route::get('/position/edit/{id}', [PositionController::class, 'EditPosition'])->name('edit.position');
     Route::post('/position/update/{id}', [PositionController::class, 'UpdatePosition'])->name('update.position');
     Route::get('/position/delete/{id}', [PositionController::class, 'DeletePosition'])->name('delete.position');
+});
