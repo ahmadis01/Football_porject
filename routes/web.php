@@ -37,7 +37,7 @@ Route::get('/register/form', [RegisterController::class, 'showRegistrationForm']
 Route::post('/register', [RegisterController::class, 'register']);
 
 
-Route::group(['middleware' => 'auth:api'], function () {
+Route::group(['middleware' => 'auth:web'], function () {
     
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/user/edit/{id}', [HomeController::class, 'EditUser'])->name('edit.user');
