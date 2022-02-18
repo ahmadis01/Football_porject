@@ -17,12 +17,14 @@ class MatchController extends Controller
         $validateData=$request->validate([
             'team1' => 'required|string|max:255',
             'team2' => 'required|string|max:255',
-            'date' => 'required'
+            'date' => 'required',
+            'time' => 'required'
         ]);
         $match=Fmatch::create([
             'team1' => $request->team1,
             'team2' => $request-> team2,
-            'date' => $request->date
+            'date' => $request->date,
+            'time' => $request->time
         ]);
         return redirect()->back();
     }

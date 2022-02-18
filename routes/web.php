@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MatchController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\PositionController;
+use App\Http\Controllers\TeamController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -30,9 +31,9 @@ Route::get('/', function () {
 
 
 //Auth routes
-Route::get('/login/form', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+//Route::get('/login/form', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register/form', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
@@ -67,4 +68,11 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::get('/position/edit/{id}', [PositionController::class, 'EditPosition'])->name('edit.position');
     Route::post('/position/update/{id}', [PositionController::class, 'UpdatePosition'])->name('update.position');
     Route::get('/position/delete/{id}', [PositionController::class, 'DeletePosition'])->name('delete.position');
+
+    //teams routes
+    Route::get('/team/all', [TeamController::class, 'AllTeams'])->name('all.teams');
+    Route::post('/team/add', [TeamController::class, 'AddTeam'])->name('add.team');
+    Route::get('/team/edit/{id}', [TeamController::class, 'EditTeam'])->name('edit.team');
+    Route::post('/team/update/{id}', [TeamController::class, 'UpdateTeam'])->name('update.team');
+    Route::get('/team/delete/{id}', [TeamController::class, 'DeleteTeam'])->name('delete.team');
 });

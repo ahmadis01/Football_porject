@@ -5,7 +5,7 @@
 
     @include('layouts.sidebar')
 
-    <form class="edit-form" method="POST" action="{{ url('position/update/'.$position->id) }}">
+    <form class="add_form" method="POST" action="{{ url('position/update/'.$position->id) }}">
         @csrf
         <h2>Edit position</h2>
         @error('position')

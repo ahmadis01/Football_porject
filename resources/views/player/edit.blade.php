@@ -5,11 +5,15 @@
 
     @include('layouts.sidebar')
 
-    <form class="edit-form" method="POST" action="{{url('player/update/'.$player->id)}}">
+    <form class="add_form" method="POST" action="{{url('player/update/'.$player->id)}}">
         @csrf
         <h2>Edit player</h2>
         <p type="name:"><input name="name" value="{{$player->name}}"></p>
         @error('name')
+            <span class="text-error">{{ $message }}</span>
+        @enderror
+        <p type="number:">number:<input name="number" placeholder=""></p>
+        @error('number')
             <span class="text-error">{{ $message }}</span>
         @enderror
         <div class="input-field col s12">

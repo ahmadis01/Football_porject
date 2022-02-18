@@ -16,6 +16,7 @@ class CreatePlayersTable extends Migration
         Schema::create('players', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('number');
             $table->bigInteger('position_id')->unsigned();
             $table->timestamps();
             $table->foreign('position_id')->references('id')->on('positions')->onDelete('cascade');

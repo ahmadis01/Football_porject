@@ -58,7 +58,7 @@ class LoginController extends Controller
             return redirect()->intended('home');
         }
         else {
-            return redirect()->route('login')->with('error','username or password is invalid');
+            return redirect()->route('welcome')->with('error','username or password is invalid');
         }
             
     }

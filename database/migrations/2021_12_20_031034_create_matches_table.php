@@ -18,6 +18,7 @@ class CreateMatchesTable extends Migration
             $table->string('team1');
             $table->string('team2');
             $table->date('date');
+            $table->time('time');
             $table->timestamps();
         });
     }

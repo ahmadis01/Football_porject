@@ -18,9 +18,11 @@ class PlayerController extends Controller
     {
         $validateData = $request->validate([
             'name' => 'required|string',
+            'number' => 'required|integer' 
         ]);
         $player = Player::create([
             'name' => $request->name,
+            'number' => $request->number,
             'position_id' => $request->position
         ]);
         return redirect()->back();
@@ -35,9 +37,11 @@ class PlayerController extends Controller
     {
         $validateData = $request->validate([
             'name' => 'required|string',
+            'number' => 'required|integer' 
         ]);
         $player=Player::find($id)->update([
             'name' => $request->name,
+            'number' => $request->number,
             'position_id' => $request-> position,
         ]);
         return redirect()->route('all.players');

@@ -1,8 +1,5 @@
-<div class="header_nav">
+<div class="header">
     <span class="title">Matches App</span>
-    <form action="{{ route('logout') }} " method="POST">
-        @csrf
-        <input type="submit" value="logout">
-    </form>
-
+    <a class="logout" href="{{route('logout')}}">logout</a>
+    
 </div>

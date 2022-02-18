@@ -12,6 +12,7 @@ class Fmatch extends Model
         'team1' ,
         'team2' ,
         'date',
+        'time'
     ];
     public function players(){
         return $this->belongsToMany(Player::class,'match_players');

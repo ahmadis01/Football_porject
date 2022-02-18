@@ -4,13 +4,15 @@
     @include('layouts.header')
 
     @include('layouts.sidebar')
-    <span class="table-title">All Players</span>
-    <div class="home-table">
-        <table>
+    <div class="matches_container">
+    <span class="table_title">All Players</span>
+    <div class="table_container">
+        <table class="table">
             <thead>
                 <tr>
                     <th> NO </th>
                     <th>Name</th>
+                    <th>number</th>
                     <th>Position</th>
                     <th>Action</th>
                 </tr>
@@ -21,6 +23,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td> {{ $player->name }}</td>
+                        <td> {{ $player->number }}</td>
                         <td>{{ $player->position->position }}</td>
                         <td>
                             <a href="{{url('player/edit/'.$player->id)}}" class="btn-edit"><span>Edit</span></a>
@@ -34,15 +37,19 @@
         {{$players->links()}}
     </div>
 
-    <form class="form" method="POST" action="{{route('add.player')}}">
+    <form class="add_form" method="POST" action="{{route('add.player')}}">
         @csrf
         <h2>Add player</h2>
-        <p type="name:"><input name="name" placeholder=""></p>
+        <p type="name:">name:<input name="name" placeholder=""></p>
         @error('name')
             <span class="text-error">{{ $message }}</span>
         @enderror
+        <p type="number:">number:<input name="number" placeholder=""></p>
+        @error('number')
+            <span class="text-error">{{ $message }}</span>
+        @enderror
         <div class="input-field col s12">
-            <p type="Position:" display="inline"></p>
+            <p type="Position:" display="inline">The Position:</p>
             <select name="position">
                 @foreach ($positions as $position)
                     <option value="{{$position->id}}">{{$position->position}}</option>
@@ -52,6 +59,6 @@
         <button type="submit">Add player</button>
 
     </form>
-
+</div>
 
 @endsection

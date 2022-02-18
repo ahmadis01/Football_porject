@@ -1,5 +1,4 @@
-@include('welcome');
-   <div class="signup-form">
+   <div class="register_form">
         <form method="POST" action="{{url('/register')}}">
             @csrf
             <label >Sign up 
@@ -8,4 +7,5 @@
             <input type="password" name="password_confirmation" placeholder="confirm password" required="">
             <button>Sign up</button>
         </form>
+        <a href="{{route('welcome')}}">Go to Login</a>
     </div>
