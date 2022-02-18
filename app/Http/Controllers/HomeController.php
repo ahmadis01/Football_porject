@@ -27,7 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         date_default_timezone_set('Asia/Damascus');
-        $next_matches=Fmatch::whereDate('date',date('Y-m-d'))->whereTime('time','>',date('h'))->get();
+        $next_matches=Fmatch::whereDate('date',date('Y-m-d'))->get();
         $current_matches=Fmatch::whereDate('date',date('Y-m-d'))->whereTime('time','<=',date('H:i:s'))->get();
         $teams=Team::latest()->get();
         return view('home',compact('teams','next_matches','current_matches'));
